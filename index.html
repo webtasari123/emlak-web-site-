@@ -4,32 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMLAKPRO | Premium Emlak Çözümleri</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+    <title>Elite Properties | Premium Emlak Çözümleri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        /* Genel Stil */
+        /* Değişkenler ve Temel Stiller */
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #d4af37;
+            --accent-color: #2d3748;
+            --light-color: #f7fafc;
+            --dark-color: #1a202c;
+            --gray-color: #718096;
+            --light-gray: #e2e8f0;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-heavy: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+            --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f7ef8a 100%);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        :root {
-            --primary: #0f1a2c;
-            --secondary: #ff6b35;
-            --accent: #3498db;
-            --gold: #ffd700;
-            --light: #f8f9fa;
-            --dark: #0f1a2c;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-            --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --gradient: linear-gradient(135deg, #0f1a2c 0%, #1a2b3c 100%);
-            --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #ff8e35 100%);
         }
 
         html {
@@ -37,547 +40,729 @@
         }
 
         body {
-            line-height: 1.7;
-            color: var(--text);
-            background-color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
             overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-color);
         }
 
         .container {
             width: 100%;
-            max-width: 1400px;
+            max-width: 1320px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 35px;
-            background: var(--gradient-secondary);
-            color: white;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
-            font-size: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: var(--transition);
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.6);
+        .section-padding {
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
             position: relative;
         }
 
         .section-title h2 {
-            font-size: 48px;
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-weight: 800;
+            font-size: 36px;
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .section-title h2::after {
+        .section-title h2:after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient-secondary);
             border-radius: 2px;
         }
 
         .section-title p {
-            color: var(--text-light);
+            color: var(--gray-color);
             max-width: 700px;
             margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 16px;
         }
 
-        /* Header */
-        .main-header {
-            background-color: rgba(15, 26, 44, 0.95);
-            box-shadow: var(--shadow);
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 3px 10px rgba(26, 54, 93, 0.1);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Header & Navigation - DÜZ TASARIM GÜNCELLENMİŞ */
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(15px);
             transition: var(--transition);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .header-content {
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            padding: 5px 0;
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotateY(180deg);
         }
 
         .logo-text {
-            font-size: 32px;
-            font-weight: 900;
-            color: white;
             display: flex;
-            align-items: center;
-            letter-spacing: 1px;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .logo-text span {
-            color: var(--secondary);
-            margin-left: 5px;
-            position: relative;
-        }
-
-        .logo-text::before {
-            content: '';
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin-right: 12px;
-            box-shadow: 0 0 15px var(--gold);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Navigation */
-        nav ul {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul li {
-            position: relative;
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            font-weight: 600;
-            padding: 12px 0;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            position: relative;
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 12px;
+            color: var(--secondary-color);
+            font-weight: 500;
             letter-spacing: 0.5px;
         }
 
-        nav ul li a::after {
+        /* Navigation Menu - DÜZ TASARIM GÜNCELLENMİŞ */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu>ul>li>a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 10px 16px;
+            display: block;
+            transition: var(--transition);
+            position: relative;
+            border-radius: 4px;
+            margin: 0 2px;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-menu>ul>li>a:hover,
+        .nav-menu>ul>li>a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Menü hover efektleri - GÜNCELLENMİŞ */
+        .nav-menu>ul>li>a:after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
             width: 0;
             height: 2px;
-            background: var(--secondary);
+            background: var(--secondary-color);
             transition: var(--transition);
-            box-shadow: 0 0 10px var(--secondary);
+            transform: translateX(-50%);
         }
 
-        nav ul li a:hover::after {
-            width: 100%;
+        .nav-menu>ul>li>a:hover:after,
+        .nav-menu>ul>li>a.active:after {
+            width: 80%;
         }
 
-        nav ul li a:hover {
-            color: white;
-            transform: translateY(-2px);
+        /* Dropdown Menüsü - DÜZ TASARIM GÜNCELLENMİŞ */
+        .dropdown {
+            position: relative;
         }
 
-        nav ul li a i {
-            margin-left: 8px;
+        .dropdown>a {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown>a i {
+            margin-left: 6px;
             font-size: 12px;
             transition: var(--transition);
         }
 
-        nav ul li:hover a i {
+        .dropdown:hover>a i {
             transform: rotate(180deg);
         }
 
-        .dropdown-menu {
+        .dropdown-content {
             position: absolute;
             top: 100%;
             left: 0;
-            background: rgba(15, 26, 44, 0.95);
-            min-width: 240px;
-            box-shadow: var(--shadow);
-            border-radius: 15px;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: var(--shadow-heavy);
+            border-radius: var(--border-radius);
+            padding: 10px 0;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(20px) scale(0.95);
+            transform: translateY(10px);
             transition: var(--transition);
             z-index: 100;
-            padding: 15px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
+            border: 1px solid var(--light-gray);
         }
 
-        nav ul li:hover .dropdown-menu {
+        .dropdown:hover .dropdown-content {
             opacity: 1;
             visibility: visible;
-            transform: translateY(10px) scale(1);
+            transform: translateY(0);
         }
 
-        .dropdown-menu li {
-            margin: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .dropdown-menu li:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-menu li a {
-            padding: 15px 25px;
+        .dropdown-content a {
             display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: var(--dark-color);
             font-weight: 500;
             transition: var(--transition);
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .dropdown-menu li a:hover {
-            background: rgba(255, 107, 53, 0.1);
-            padding-left: 30px;
-            color: white;
-            transform: none;
-        }
-
-        .dropdown-menu li a::after {
-            display: none;
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            width: 30px;
-            height: 25px;
-            position: relative;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            margin: 3px 0;
-            transition: var(--transition);
-            border-radius: 3px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-            background: var(--secondary);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-            background: var(--secondary);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(15, 26, 44, 0.9) 0%, rgba(26, 43, 60, 0.8) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            font-size: 14px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .dropdown-content a:before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            filter: blur(8px) brightness(0.7);
-            transform: scale(1.1);
-            z-index: -1;
-            animation: zoomInOut 20s infinite alternate;
-        }
-
-        @keyframes zoomInOut {
-            0% {
-                transform: scale(1.1);
-            }
-
-            100% {
-                transform: scale(1.15);
-            }
-        }
-
-        .hero-content {
-            max-width: 1000px;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1.2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(80px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-title {
-            font-size: 72px;
-            margin-bottom: 30px;
-            font-weight: 900;
-            line-height: 1.1;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-desc {
-            font-size: 22px;
-            margin-bottom: 50px;
-            line-height: 1.8;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-btn {
-            background: var(--gradient-secondary);
-            padding: 20px 45px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.5);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .hero-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
             left: -100%;
+            top: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: var(--transition);
-            z-index: -1;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s;
         }
 
-        .hero-btn:hover::before {
+        .dropdown-content a:hover:before {
             left: 100%;
         }
 
-        .hero-btn:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.7);
+        .dropdown-content a:hover {
+            color: var(--secondary-color);
+            background-color: rgba(212, 175, 55, 0.05);
+            padding-left: 25px;
         }
 
-        .floating-elements {
+        .dropdown-content a i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+            width: 16px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* Sub-dropdown */
+        .dropdown-content .sub-dropdown {
+            position: relative;
+        }
+
+        .dropdown-content .sub-dropdown>a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dropdown-content .sub-dropdown>a i {
+            font-size: 10px;
+            margin-right: 0;
+        }
+
+        .sub-dropdown-content {
             position: absolute;
+            top: -10px;
+            left: 100%;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-heavy);
+            border-radius: var(--border-radius);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .sub-dropdown:hover .sub-dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-actions a {
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            position: absolute;
+            height: 2px;
             width: 100%;
+            background: var(--primary-color);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: 0.25s ease-in-out;
+        }
+
+        .hamburger-menu span:nth-child(1) {
+            top: 0px;
+        }
+
+        .hamburger-menu span:nth-child(2) {
+            top: 8px;
+        }
+
+        .hamburger-menu span:nth-child(3) {
+            top: 16px;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            top: 8px;
+            transform: rotate(135deg);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            top: 8px;
+            transform: rotate(-135deg);
+        }
+
+        /* Hero Slider */
+        .hero-slider {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            margin-top: 75px;
+        }
+
+        .slider-container {
             height: 100%;
+            position: relative;
+        }
+
+        .slider-item {
+            position: absolute;
             top: 0;
             left: 0;
-            pointer-events: none;
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .floating-element {
+        .slider-item.active {
+            opacity: 1;
+        }
+
+        .slider-item .slider-overlay {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            animation: float 6s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(26, 54, 93, 0.85) 0%, rgba(26, 54, 93, 0.7) 100%);
+            display: flex;
+            align-items: center;
         }
 
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
+        .slider-content {
+            max-width: 700px;
+            color: white;
+            padding-left: 60px;
+            transform: translateY(30px);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
         }
 
-        .floating-element:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
+        .slider-item.active .slider-content {
+            transform: translateY(0);
+            opacity: 1;
         }
 
-        .floating-element:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
+        .slider-content h1 {
+            font-size: 42px;
+            color: white;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
 
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
+        .slider-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
         }
 
-        /* Property Cards Section */
-        .properties {
-            padding: 150px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        .slider-content .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .slider-dots {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: white;
+            transform: scale(1.2);
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .slider-nav-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .slider-nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Search Form */
+        .search-section {
+            margin-top: -60px;
+            position: relative;
+            z-index: 200;
+        }
+
+        .search-container {
+            background-color: white;
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-heavy);
+            margin: 0 20px;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 14px 16px;
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            transition: var(--transition);
+            background-color: white;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
+        }
+
+        .search-btn {
+            background: var(--gradient-gold);
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            align-self: end;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Property Listings - KÜÇÜK KARTLAR GÜNCELLENMİŞ */
+        .listings-section {
+            background-color: var(--light-color);
             position: relative;
             overflow: hidden;
         }
 
-        .properties::before {
+        .listings-section:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1600585154340-9635a1bcd44f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            opacity: 0.03;
-            z-index: 0;
-            animation: backgroundMove 30s infinite linear;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f7fafc"/><path d="M0,0 L100,0 L100,100 Z" fill="%231a365d" opacity="0.02"/><path d="M0,0 L0,100 L100,100 Z" fill="%23d4af37" opacity="0.02"/></svg>');
+            opacity: 0.5;
         }
 
-        @keyframes backgroundMove {
-            0% {
-                transform: scale(1) rotate(0deg);
-            }
-
-            50% {
-                transform: scale(1.1) rotate(1deg);
-            }
-
-            100% {
-                transform: scale(1) rotate(0deg);
-            }
+        .listings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
-        .property-cards {
+        .listings-header h2 {
+            font-size: 30px;
+            margin-bottom: 0;
+        }
+
+        .listings-header h2:after {
+            left: 0;
+            transform: none;
+        }
+
+        .property-tabs {
+            display: flex;
+            background-color: white;
+            border-radius: 6px;
+            padding: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .property-tab {
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .property-tab.active {
+            background: var(--gradient-gold);
+            color: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* KÜÇÜK KARTLAR - 4'lü grid masaüstünde (8 KART İÇİN) */
+        .listings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
         }
 
+        /* Property Cards - KÜÇÜK ve KOMPAKT GÜNCELLENMİŞ */
         .property-card {
-            background: white;
-            border-radius: 20px;
+            background-color: white;
+            border-radius: var(--border-radius-lg);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .property-card:hover {
-            transform: translateY(-20px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
         }
 
         .property-img {
-            height: 280px;
+            height: 160px;
+            /* Daha küçük */
             overflow: hidden;
             position: relative;
         }
@@ -590,903 +775,1687 @@
         }
 
         .property-card:hover .property-img img {
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
 
         .property-badge {
             position: absolute;
-            top: 25px;
-            right: 25px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 14px;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            text-transform: uppercase;
-            z-index: 2;
-        }
-
-        .badge-sale {
-            background: var(--gradient-secondary);
-            color: white;
-        }
-
-        .badge-rent {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
-        }
-
-        .property-info {
-            padding: 30px;
-        }
-
-        .property-price {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .property-title {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--dark);
+            top: 12px;
+            left: 12px;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 10;
             letter-spacing: 0.5px;
         }
 
-        .property-location {
-            color: var(--text-light);
-            margin-bottom: 25px;
+        .property-badge.sale {
+            background: var(--gradient-gold);
+            color: var(--primary-color);
+        }
+
+        .property-badge.rent {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .property-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: var(--transition);
+        }
+
+        .property-card:hover .property-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .property-action {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
             display: flex;
             align-items: center;
-            font-size: 16px;
+            justify-content: center;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+
+        .property-action:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .property-info {
+            padding: 18px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+        }
+
+        .property-price span {
+            font-size: 13px;
             font-weight: 500;
+            color: var(--gray-color);
+        }
+
+        .property-title {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: var(--primary-color);
+            line-height: 1.3;
+            font-weight: 600;
+            min-height: 42px;
+        }
+
+        .property-title a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            display: block;
+        }
+
+        .property-title a:hover {
+            color: var(--secondary-color);
+        }
+
+        .property-location {
+            color: var(--gray-color);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 13px;
         }
 
         .property-location i {
-            margin-right: 10px;
-            color: var(--secondary);
-            font-size: 18px;
+            margin-right: 6px;
+            color: var(--secondary-color);
+            font-size: 11px;
         }
 
         .property-features {
             display: flex;
             justify-content: space-between;
-            border-top: 1px solid #eee;
-            padding-top: 25px;
-            margin-top: 25px;
+            padding-top: 12px;
+            margin-top: auto;
+            border-top: 1px solid var(--light-gray);
         }
 
-        .feature {
+        .property-feature {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            font-size: 11px;
+            color: var(--gray-color);
+        }
+
+        .property-feature i {
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: var(--secondary-color);
+        }
+
+        .property-feature-value {
             font-weight: 600;
-            color: var(--text);
+            color: var(--dark-color);
+            margin-top: 2px;
+            font-size: 12px;
         }
 
-        .feature i {
-            margin-right: 10px;
-            color: var(--accent);
-            font-size: 20px;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 150px 0;
-            background: var(--gradient);
+        /* Features Section */
+        .features-section {
             position: relative;
             overflow: hidden;
         }
 
-        .services::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1600585154340-9635a1bcd44f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            opacity: 0.05;
-            z-index: 0;
-        }
-
-        .services .section-title h2,
-        .services .section-title p {
-            color: white;
-        }
-
-        .service-cards {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 40px;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-        .service-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 50px 35px;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px 25px;
             text-align: center;
+            box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-secondary);
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
         }
 
-        .service-card:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .service-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--gradient-secondary);
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
-            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+            margin: 0 auto 25px;
             transition: var(--transition);
         }
 
-        .service-card:hover .service-icon {
-            transform: rotateY(180deg) scale(1.1);
+        .feature-card:hover .feature-icon {
+            background: var(--gradient-gold);
+            transform: rotateY(180deg);
         }
 
-        .service-icon i {
-            font-size: 40px;
+        .feature-icon i {
+            font-size: 30px;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon i {
             color: white;
         }
 
-        .service-card h3 {
-            font-size: 26px;
-            margin-bottom: 25px;
-            color: white;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
         }
 
-        .service-card p {
+        /* Statistics */
+        .stats-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section .section-title h2 {
+            color: white;
+        }
+
+        .stats-section .section-title h2:after {
+            background: var(--secondary-color);
+        }
+
+        .stats-section .section-title p {
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-title {
             font-size: 16px;
+            color: white;
         }
 
         /* Footer */
         footer {
-            background: var(--gradient);
-            color: white;
-            padding: 100px 0 0;
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 80px 0 25px;
             position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1600585154340-9635a1bcd44f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            opacity: 0.05;
-            z-index: 0;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 60px;
-            margin-bottom: 70px;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-column h3 {
-            font-size: 24px;
-            margin-bottom: 35px;
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: white;
             position: relative;
-            padding-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            padding-bottom: 12px;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .footer-column h3::after {
+        .footer-column h3:after {
             content: '';
             position: absolute;
-            left: 0;
             bottom: 0;
-            width: 60px;
+            left: 0;
+            width: 40px;
             height: 3px;
-            background: var(--secondary);
-            border-radius: 2px;
+            background: var(--secondary-color);
         }
 
-        .footer-links li {
-            margin-bottom: 18px;
+        .footer-column p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 14px;
         }
 
-        .footer-links a {
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
             transition: var(--transition);
             display: flex;
             align-items: center;
-            opacity: 0.8;
-            font-weight: 500;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 12px;
-            opacity: 1;
-            transform: translateX(5px);
-        }
-
-        .footer-links a i {
-            margin-right: 12px;
+        .footer-column ul li a i {
+            margin-right: 10px;
+            color: var(--secondary-color);
             font-size: 12px;
-            color: var(--secondary);
             transition: var(--transition);
         }
 
-        .footer-links a:hover i {
-            transform: rotate(90deg);
-        }
-
-        .contact-info li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-
-        .contact-info i {
-            margin-right: 18px;
-            color: var(--secondary);
-            margin-top: 5px;
-            font-size: 20px;
-            min-width: 20px;
+        .footer-column ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
         }
 
         .social-links {
             display: flex;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 25px;
         }
 
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
+        .social-link {
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            color: white;
+            text-decoration: none;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
         }
 
-        .social-links a:hover {
-            background: var(--secondary);
-            transform: translateY(-8px) rotate(10deg);
-            border-color: var(--secondary);
-            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 30px 0;
             text-align: center;
-            position: relative;
-            z-index: 1;
+            padding-top: 25px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
         }
 
-        .footer-bottom p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 16px;
-            letter-spacing: 0.5px;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
         }
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .hero-title {
-                font-size: 60px;
+            .listings-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
             }
 
-            .property-cards {
-                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            .slider-content h1 {
+                font-size: 36px;
             }
         }
 
         @media (max-width: 992px) {
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
+            .nav-menu {
                 position: fixed;
                 top: 0;
-                left: -100%;
-                width: 85%;
+                right: -100%;
+                width: 300px;
                 height: 100vh;
-                background: var(--gradient);
-                transition: var(--transition);
-                box-shadow: var(--shadow);
-                overflow-y: auto;
-                z-index: 999;
-                padding-top: 100px;
-            }
-
-            nav.active {
-                left: 0;
-            }
-
-            nav ul {
+                background-color: white;
                 flex-direction: column;
-                padding: 0 40px;
                 align-items: flex-start;
+                padding: 80px 25px 25px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.08);
+                transition: var(--transition);
+                overflow-y: auto;
             }
 
-            nav ul li {
-                margin: 0 0 25px 0;
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
                 width: 100%;
             }
 
-            .dropdown-menu {
+            .nav-menu li {
+                width: 100%;
+                margin-bottom: 8px;
+            }
+
+            .nav-menu>ul>li>a {
+                padding: 12px 16px;
+                margin: 0;
+                border-radius: 4px;
+                font-size: 15px;
+            }
+
+            .nav-menu>ul>li>a:after {
+                display: none;
+            }
+
+            .dropdown-content {
                 position: static;
+                box-shadow: none;
+                padding-left: 20px;
                 opacity: 1;
                 visibility: visible;
                 transform: none;
-                box-shadow: none;
-                background: rgba(0, 0, 0, 0.2);
-                margin-top: 15px;
                 display: none;
-                width: 100%;
-                border-radius: 10px;
+                min-width: auto;
+                border-left: 2px solid var(--secondary-color);
+                margin-top: 8px;
+                border-radius: 0;
                 border: none;
             }
 
-            nav ul li.active .dropdown-menu {
+            .dropdown.active .dropdown-content {
                 display: block;
             }
 
-            .hero-title {
-                font-size: 48px;
+            .sub-dropdown-content {
+                position: static;
+                box-shadow: none;
+                padding-left: 20px;
+                transform: none;
+                border: none;
             }
 
-            .hero-desc {
-                font-size: 18px;
+            .hamburger-menu {
+                display: block;
+            }
+
+            .header-actions.desktop-only {
+                display: none;
+            }
+
+            .header-actions.mobile-only {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .slider-content {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .slider-content h1 {
+                font-size: 32px;
+            }
+
+            .slider-nav {
+                padding: 0 20px;
+            }
+
+            .search-container {
+                padding: 25px;
+            }
+
+            .listings-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
         }
 
         @media (max-width: 768px) {
-            .hero {
-                height: 80vh;
-            }
-
-            .hero-title {
-                font-size: 42px;
-            }
-
-            .property-cards {
-                grid-template-columns: 1fr;
+            .section-padding {
+                padding: 60px 0;
             }
 
             .section-title h2 {
+                font-size: 30px;
+            }
+
+            .hero-slider {
+                height: 60vh;
+                margin-top: 70px;
+            }
+
+            .slider-content h1 {
+                font-size: 28px;
+            }
+
+            .slider-content p {
+                font-size: 16px;
+            }
+
+            .slider-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .search-container {
+                margin: 0 10px;
+                padding: 20px;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+
+            .listings-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .listings-header h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .property-tabs {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .listings-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stat-number {
                 font-size: 36px;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .property-img {
+                height: 140px;
+            }
+
+            .property-info {
+                padding: 15px;
+            }
+
+            .property-title {
+                font-size: 15px;
+                min-height: 38px;
+            }
+
+            .property-price {
+                font-size: 16px;
             }
         }
 
         @media (max-width: 576px) {
-            .hero-title {
-                font-size: 36px;
+            .slider-content {
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
-            .hero-desc {
-                font-size: 16px;
+            .slider-content h1 {
+                font-size: 24px;
             }
 
-            .section-title h2 {
-                font-size: 32px;
+            .slider-content .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+                margin-right: 0;
             }
 
-            .property-cards {
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 18px;
+                margin-right: 8px;
+            }
+
+            .header-container {
+                padding: 12px 15px;
+            }
+
+            .listings-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-btn {
-                padding: 18px 35px;
-                font-size: 16px;
+            .property-img {
+                height: 180px;
             }
+        }
+
+        @media (max-width: 480px) {
+            .listings-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Yeni eklenen kart animasyonları */
+        @keyframes cardPulse {
+            0% {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            50% {
+                box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+            }
+
+            100% {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        .property-card.highlight {
+            animation: cardPulse 2s infinite;
+        }
+
+        /* Yeni menü efekti */
+        @keyframes menuItemAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-menu ul li {
+            animation: menuItemAppear 0.3s ease forwards;
+            opacity: 0;
+        }
+
+        .nav-menu ul li:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .nav-menu ul li:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .nav-menu ul li:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .nav-menu ul li:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .nav-menu ul li:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .nav-menu ul li:nth-child(6) {
+            animation-delay: 0.6s;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="main-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-text">Emlak<span>Pro</span></div>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-home"></i>
                 </div>
-
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="logo-text">
+                    <h1>Elite Properties</h1>
+                    <span>Premium Emlak Çözümleri</span>
                 </div>
+            </a>
 
-                <nav id="nav">
-                    <ul>
-                        <li>
-                            <a href="#">ANASAYFA</a>
-                        </li>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-                        <li class="dropdown-parent">
-                            <a href="#">EMLAK <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Satılık Konut</a></li>
-                                <li><a href="#">Kiralık Konut</a></li>
-                                <li><a href="#">Satılık İş Yeri</a></li>
-                                <li><a href="#">Kiralık İş Yeri</a></li>
-                                <li><a href="#">Arsa & Arazi</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-parent">
-                            <a href="#">İLANLAR <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">İlanlarım</a></li>
-                                <li><a href="#">İlan Ver</a></li>
-                                <li><a href="#">Tüm İlanlar</a></li>
-                            </ul>
-                        </li>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#" class="active">Ana Sayfa</a></li>
 
-                        <li class="dropdown-parent">
-                            <a href="#">HİZMETLER <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Emlak Danışmanlığı</a></li>
-                                <li><a href="#">Gayrimenkul Değerleme</a></li>
-                                <li><a href="#">Hukuki Danışmanlık</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-parent">
-                            <a href="#">PROJELER <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Yeni Projeler</a></li>
-                                <li><a href="#">Tamamlanan Projeler</a></li>
-                                <li><a href="#">Devam Eden Projeler</a></li>
-                            </ul>
-                        </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            Satılık
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-building"></i> Daire</a>
+                            <a href="#"><i class="fas fa-hotel"></i> Villa</a>
+                            <a href="#"><i class="fas fa-store"></i> İş Yeri</a>
+                            <a href="#"><i class="fas fa-mountain"></i> Arsa</a>
+                            <a href="#"><i class="fas fa-umbrella-beach"></i> Yazlık</a>
+                        </div>
+                    </li>
 
-                        <li class="dropdown-parent">
-                            <a href="#">KURUMSAL <i class="fas fa-chevron-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Hakkımızda</a></li>
-                                <li><a href="#">Ekibimiz</a></li>
-                                <li><a href="#">Kariyer</a></li>
-                                <li><a href="#">İletişim</a></li>
-                            </ul>
-                        </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            Kiralık
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-calendar-day"></i> Günlük Kiralık</a>
+                            <a href="#"><i class="fas fa-calendar-week"></i> Aylık Kiralık</a>
+                            <a href="#"><i class="fas fa-calendar-alt"></i> Uzun Dönem</a>
+                            <div class="sub-dropdown">
+                                <a href="#">
+                                    <i class="fas fa-building"></i> Konut Tipleri
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                                <div class="sub-dropdown-content">
+                                    <a href="#">Stüdyo</a>
+                                    <a href="#">1+1</a>
+                                    <a href="#">2+1</a>
+                                    <a href="#">3+1</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
 
-                        <li>
-                            <a href="#">BLOG</a>
-                        </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            Projeler
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-star"></i> Yeni Projeler</a>
+                            <a href="#"><i class="fas fa-tasks"></i> Devam Eden Projeler</a>
+                            <a href="#"><i class="fas fa-check-circle"></i> Tamamlanan Projeler</a>
+                        </div>
+                    </li>
 
-                        <li>
-                            <a href="#">İLETİŞİM</a>
-                        </li>
-                    </ul>
-                </nav>
+                    <li><a href="#">Danışmanlarımız</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">
+                            Hizmetler
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-chart-line"></i> Emlak Değerleme</a>
+                            <a href="#"><i class="fas fa-balance-scale"></i> Hukuki Danışmanlık</a>
+                            <a href="#"><i class="fas fa-hand-holding-usd"></i> Kredi Danışmanlığı</a>
+                            <a href="#"><i class="fas fa-shield-alt"></i> Sigorta Hizmetleri</a>
+                        </div>
+                    </li>
+
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slider-item active"
+                style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                <div class="slider-overlay">
+                    <div class="container">
+                        <div class="slider-content">
+                            <h1 class="animate__animated animate__fadeInDown">Modern Yaşam Alanları Keşfedin</h1>
+                            <p class="animate__animated animate__fadeInUp">Elite Properties olarak, hayalinizdeki yaşam
+                                alanını bulmanız için premium emlak çözümleri sunuyoruz.</p>
+                            <div class="animate__animated animate__fadeInUp">
+                                <a href="#" class="btn btn-primary">Mülkleri Keşfet</a>
+                                <a href="#" class="btn btn-outline">Danışmanlık Al</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slider-item"
+                style="background-image: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                <div class="slider-overlay">
+                    <div class="container">
+                        <div class="slider-content">
+                            <h1>Lüks Villa ve Yazlıklar</h1>
+                            <p>Deniz manzaralı villalardan şehir merkezindeki lüks dairelere kadar geniş portföyümüzle
+                                hizmetinizdeyiz.</p>
+                            <div>
+                                <a href="#" class="btn btn-primary">Satılık Mülkler</a>
+                                <a href="#" class="btn btn-outline">Kiralık Mülkler</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slider-item"
+                style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                <div class="slider-overlay">
+                    <div class="container">
+                        <div class="slider-content">
+                            <h1>İş Yeri ve Ticari Mülkler</h1>
+                            <p>İşiniz için en uygun ticari mülkleri bulmanızda uzman ekibimizle yanınızdayız.</p>
+                            <div>
+                                <a href="#" class="btn btn-primary">Ticari Mülkler</a>
+                                <a href="#" class="btn btn-outline">İletişime Geç</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <section class="hero">
-        <div class="floating-elements">
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
+        <div class="slider-nav">
+            <button class="slider-nav-btn prev-slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav-btn next-slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
         </div>
-        <div class="hero-content">
-            <h1 class="hero-title">HAYALİNİZDEKİ EVİ BULUN</h1>
-            <p class="hero-desc">EmlakPro ile premium gayrimenkul deneyimini yaşayın. Binlerce güvenilir ilan arasından
-                size en uygun yaşam alanını keşfedin. Profesyonel danışmanlık hizmetimizle hayalinizdeki eve ulaşmanızı
-                sağlıyoruz.</p>
-            <a href="#" class="hero-btn">İlanları Keşfet <i class="fas fa-arrow-right"></i></a>
+
+        <div class="slider-controls">
+            <div class="slider-dots">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
         </div>
     </section>
 
-    <section class="properties">
+    <!-- Search Form -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container fade-in-up">
+                <form class="search-form" id="searchForm">
+                    <div class="form-group">
+                        <label for="location"><i class="fas fa-map-marker-alt"></i> Lokasyon</label>
+                        <select id="location">
+                            <option value="">Tüm Şehirler</option>
+                            <option value="istanbul">İstanbul</option>
+                            <option value="ankara">Ankara</option>
+                            <option value="izmir">İzmir</option>
+                            <option value="antalya">Antalya</option>
+                            <option value="bursa">Bursa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type"><i class="fas fa-home"></i> Mülk Tipi</label>
+                        <select id="type">
+                            <option value="">Tüm Mülkler</option>
+                            <option value="apartment">Daire</option>
+                            <option value="villa">Villa</option>
+                            <option value="office">İş Yeri</option>
+                            <option value="land">Arsa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transaction"><i class="fas fa-exchange-alt"></i> İşlem Türü</label>
+                        <select id="transaction">
+                            <option value="sale">Satılık</option>
+                            <option value="rent">Kiralık</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price"><i class="fas fa-tag"></i> Fiyat Aralığı</label>
+                        <select id="price">
+                            <option value="">Tüm Fiyatlar</option>
+                            <option value="0-500000">0 - 500.000 TL</option>
+                            <option value="500000-1000000">500.000 - 1.000.000 TL</option>
+                            <option value="1000000-2000000">1.000.000 - 2.000.000 TL</option>
+                            <option value="2000000+">2.000.000 TL+</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i> Mülk Ara
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Listings -->
+    <section class="listings-section section-padding">
         <div class="container">
             <div class="section-title">
-                <h2>Öne Çıkan İlanlar</h2>
-                <p>En iyi fırsatları kaçırmayın! Satılık ve kiralık premium seçeneklerimizi inceleyin.</p>
+                <h2>Öne Çıkan Mülkler</h2>
+                <p>En değerli satılık ve kiralık mülklerimizi keşfedin. Hayalinizdeki yaşam alanı burada!</p>
             </div>
 
-            <div class="property-cards">
-                <!-- Satılık 1 -->
-                <div class="property-card">
-                    <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                            alt="Modern Daire">
-                        <div class="property-badge badge-sale">SATILIK</div>
-                    </div>
-                    <div class="property-info">
-                        <div class="property-price">2.750.000 TL</div>
-                        <h3 class="property-title">Lüks 3+1 Daire</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> İstanbul, Kadıköy
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i> 3 Yatak Odası
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i> 2 Banyo
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i> 145 m²
-                            </div>
-                        </div>
-                    </div>
+            <div class="listings-header">
+                <h2>Popüler Mülkler</h2>
+                <div class="property-tabs">
+                    <div class="property-tab active" data-filter="all">Tümü</div>
+                    <div class="property-tab" data-filter="sale">Satılık</div>
+                    <div class="property-tab" data-filter="rent">Kiralık</div>
                 </div>
+            </div>
 
-                <!-- Kiralık 1 -->
-                <div class="property-card">
+            <div class="listings-grid">
+                <!-- Property 1 - Satılık -->
+                <div class="property-card" data-type="sale">
                     <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+                        <div class="property-badge sale">Satılık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
                             alt="Lüks Villa">
-                        <div class="property-badge badge-rent">KİRALIK</div>
                     </div>
                     <div class="property-info">
-                        <div class="property-price">15.000 TL/Ay</div>
-                        <h3 class="property-title">Premium 4+1 Villa</h3>
+                        <div class="property-price">3.850.000 TL</div>
+                        <h3 class="property-title"><a href="#">Modern 4+1 Lüks Villa</a></h3>
                         <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> İzmir, Çeşme
+                            <i class="fas fa-map-marker-alt"></i>
+                            Etiler, İstanbul
                         </div>
                         <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i> 4 Yatak Odası
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">4</div>
+                                <span>Yatak</span>
                             </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i> 3 Banyo
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">3</div>
+                                <span>Banyo</span>
                             </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i> 280 m²
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">280 m²</div>
+                                <span>Alan</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Satılık 2 -->
-                <div class="property-card">
+                <!-- Property 2 - Kiralık -->
+                <div class="property-card" data-type="rent">
                     <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
+                        <div class="property-badge rent">Kiralık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
+                            alt="Lüks Daire">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">25.000 TL <span>/ay</span></div>
+                        <h3 class="property-title"><a href="#">Manzaralı 3+1 Daire</a></h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Levent, İstanbul
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">3</div>
+                                <span>Yatak</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">2</div>
+                                <span>Banyo</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">145 m²</div>
+                                <span>Alan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 - Satılık -->
+                <div class="property-card" data-type="sale">
+                    <div class="property-img">
+                        <div class="property-badge sale">Satılık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
+                            alt="Modern Residence">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">5.200.000 TL</div>
+                        <h3 class="property-title"><a href="#">Residence 5+1 Duplex</a></h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Ataşehir, İstanbul
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">5</div>
+                                <span>Yatak</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">4</div>
+                                <span>Banyo</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">320 m²</div>
+                                <span>Alan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 4 - Kiralık -->
+                <div class="property-card" data-type="rent">
+                    <div class="property-img">
+                        <div class="property-badge rent">Kiralık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
+                            alt="Deniz Manzaralı Villa">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">45.000 TL <span>/ay</span></div>
+                        <h3 class="property-title"><a href="#">Deniz Manzaralı Villa</a></h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Bodrum, Muğla
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">4</div>
+                                <span>Yatak</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">3</div>
+                                <span>Banyo</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">280 m²</div>
+                                <span>Alan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 5 - Satılık -->
+                <div class="property-card" data-type="sale">
+                    <div class="property-img">
+                        <div class="property-badge sale">Satılık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
+                            alt="Tarihi Konak">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">8.500.000 TL</div>
+                        <h3 class="property-title"><a href="#">Restore Edilmiş Konak</a></h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Beyoğlu, İstanbul
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">6</div>
+                                <span>Yatak</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">5</div>
+                                <span>Banyo</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">520 m²</div>
+                                <span>Alan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 6 - Kiralık -->
+                <div class="property-card" data-type="rent">
+                    <div class="property-img">
+                        <div class="property-badge rent">Kiralık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
+                            alt="Modern Ofis">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">18.000 TL <span>/ay</span></div>
+                        <h3 class="property-title"><a href="#">Merkezi Ofis Alanı</a></h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Maslak, İstanbul
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-building"></i>
+                                <div class="property-feature-value">5</div>
+                                <span>Oda</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">180 m²</div>
+                                <span>Alan</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-car"></i>
+                                <div class="property-feature-value">6</div>
+                                <span>Park</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 7 - Satılık -->
+                <div class="property-card highlight" data-type="sale">
+                    <div class="property-img">
+                        <div class="property-badge sale">Satılık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
+                            alt="Modern Daire">
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">2.150.000 TL</div>
+                        <h3 class="property-title"><a href="#">Modern 2+1 Daire</a></h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kadıköy, İstanbul
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">2</div>
+                                <span>Yatak</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">1</div>
+                                <span>Banyo</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">110 m²</div>
+                                <span>Alan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 8 - Kiralık -->
+                <div class="property-card" data-type="rent">
+                    <div class="property-img">
+                        <div class="property-badge rent">Kiralık</div>
+                        <div class="property-actions">
+                            <div class="property-action" title="Favorilere Ekle">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="property-action" title="Paylaş">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=250&q=80"
                             alt="Stüdyo Daire">
-                        <div class="property-badge badge-sale">SATILIK</div>
                     </div>
                     <div class="property-info">
-                        <div class="property-price">1.200.000 TL</div>
-                        <h3 class="property-title">Modern Stüdyo Daire</h3>
+                        <div class="property-price">8.500 TL <span>/ay</span></div>
+                        <h3 class="property-title"><a href="#">Merkezi Stüdyo Daire</a></h3>
                         <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Ankara, Çankaya
+                            <i class="fas fa-map-marker-alt"></i>
+                            Şişli, İstanbul
                         </div>
                         <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i> 1 Yatak Odası
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <div class="property-feature-value">1</div>
+                                <span>Yatak</span>
                             </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i> 1 Banyo
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <div class="property-feature-value">1</div>
+                                <span>Banyo</span>
                             </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i> 65 m²
+                            <div class="property-feature">
+                                <i class="fas fa-vector-square"></i>
+                                <div class="property-feature-value">65 m²</div>
+                                <span>Alan</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Kiralık 2 -->
-                <div class="property-card">
-                    <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80"
-                            alt="Geniş Aile Evi">
-                        <div class="property-badge badge-rent">KİRALIK</div>
-                    </div>
-                    <div class="property-info">
-                        <div class="property-price">8.500 TL/Ay</div>
-                        <h3 class="property-title">Geniş 5+1 Aile Evi</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Bursa, Nilüfer
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i> 5 Yatak Odası
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i> 3 Banyo
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i> 220 m²
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Satılık 3 -->
-                <div class="property-card">
-                    <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80"
-                            alt="Bahçeli Müstakil">
-                        <div class="property-badge badge-sale">SATILIK</div>
-                    </div>
-                    <div class="property-info">
-                        <div class="property-price">3.500.000 TL</div>
-                        <h3 class="property-title">Bahçeli Müstakil Ev</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Antalya, Konyaaltı
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i> 4 Yatak Odası
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i> 2 Banyo
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i> 180 m²
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Kiralık 3 -->
-                <div class="property-card">
-                    <div class="property-img">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2153&q=80"
-                            alt="Deniz Manzaralı Daire">
-                        <div class="property-badge badge-rent">KİRALIK</div>
-                    </div>
-                    <div class="property-info">
-                        <div class="property-price">12.000 TL/Ay</div>
-                        <h3 class="property-title">Deniz Manzaralı Dubleks</h3>
-                        <div class="property-location">
-                            <i class="fas fa-map-marker-alt"></i> Muğla, Bodrum
-                        </div>
-                        <div class="property-features">
-                            <div class="feature">
-                                <i class="fas fa-bed"></i> 3 Yatak Odası
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-bath"></i> 2 Banyo
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-vector-square"></i> 160 m²
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#" class="btn btn-secondary">Tüm Mülkleri Görüntüle <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <section class="services">
+    <!-- Features Section -->
+    <section class="features-section section-padding">
         <div class="container">
             <div class="section-title">
-                <h2>Premium Hizmetler</h2>
-                <p>Profesyonel ekibimizle sizlere en iyi hizmeti sunmak için buradayız.</p>
+                <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+                <p>Elite Properties olarak, emlak sektöründe fark yaratan hizmet anlayışımızla müşterilerimize değer
+                    katıyoruz.</p>
             </div>
 
-            <div class="service-cards">
-                <div class="service-card">
-                    <div class="service-icon">
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Güvenilir Hizmet</h3>
+                    <p>25 yılı aşkın deneyimimiz ve referanslarımızla sektörde güvenilir bir markayız.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3>Emlak Danışmanlığı</h3>
-                    <p>Gayrimenkul yatırımlarınız için uzman danışmanlık hizmeti sunuyoruz. Doğru kararlar almanızı
-                        sağlıyoruz.</p>
+                    <h3>Geniş Portföy</h3>
+                    <p>15.000'den fazla satılık ve kiralık mülk seçeneği ile her bütçeye uygun çözüm sunuyoruz.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3>Gayrimenkul Değerleme</h3>
-                    <p>Gayrimenkullerinizin gerçek piyasa değerini belirliyoruz. En doğru değerlendirmeyi yapıyoruz.</p>
+                    <h3>7/24 Destek</h3>
+                    <p>Müşteri memnuniyeti odaklı ekibimizle haftanın 7 günü 24 saat yanınızdayız.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-balance-scale"></i>
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Hukuki Danışmanlık</h3>
-                    <p>Gayrimenkul işlemlerinizde hukuki süreçlerde yanınızdayız. Güvenli alım-satım işlemleri
-                        sağlıyoruz.</p>
+                    <h3>Uzman Danışmanlık</h3>
+                    <p>Alanında uzman emlak danışmanlarımızla doğru yatırım kararları almanızı sağlıyoruz.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Statistics Section -->
+    <section class="stats-section section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Başarılarımız</h2>
+                <p>Yıllar içinde elde ettiğimiz başarılar ve müşteri memnuniyeti istatistikleri</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="stat1">0</div>
+                    <div class="stat-title">Mutlu Müşteri</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" id="stat2">0</div>
+                    <div class="stat-title">Tamamlanan Proje</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" id="stat3">0</div>
+                    <div class="stat-title">Satılan Mülk</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number" id="stat4">0</div>
+                    <div class="stat-title">Ödül ve Sertifika</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>EmlakPro</h3>
-                    <p>EmlakPro olarak, müşterilerimize en kaliteli hizmeti sunmak için çalışıyoruz. Hayalinizdeki evi
-                        bulmanız için buradayız. Güvenilir ve profesyonel çözümler sunuyoruz.</p>
+                    <h3>Elite Properties</h3>
+                    <p>Profesyonel emlak çözümleri sunan lider kuruluş. Hayalinizdeki mülkü bulmanız için 25 yıldır
+                        hizmetinizdeyiz.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-column">
                     <h3>Hızlı Bağlantılar</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Anasayfa</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hakkımızda</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hizmetler</a></li>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ana Sayfa</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Satılık Mülkler</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kiralık Mülkler</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i> Projeler</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> İletişim</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Danışmanlarımız</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
-                    <h3>Premium Hizmetler</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Satılık Konut</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kiralık Konut</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> İş Yeri</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Arsa & Arazi</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Gayrimenkul Değerleme</a></li>
+                    <h3>Hizmetler</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Emlak Değerleme</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Hukuki Danışmanlık</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kredi Danışmanlığı</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sigorta Hizmetleri</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Mülk Yönetimi</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-column">
                     <h3>İletişim</h3>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>1234 Emlak Caddesi, No:56<br>İstanbul, Türkiye</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+90 (212) 123 45 67</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@emlakpro.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Pazartesi - Cuma: 09:00 - 18:00</span>
-                        </li>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Levent Mah. No:25, İstanbul</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> (0212) 345 67 89</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@eliteproperties.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Pzt-Cmt: 09:00 - 19:00</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2023 EmlakPro. Tüm hakları saklıdır. | Premium Emlak Çözümleri</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elite Properties. Tüm hakları saklıdır. | <a href="#"
+                        style="color: var(--secondary-color); text-decoration: none;">Gizlilik Politikası</a></p>
             </div>
         </div>
     </footer>
 
     <script>
         // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('nav');
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
 
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('active');
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Dropdown Menu for Mobile
-        const dropdownParents = document.querySelectorAll('.dropdown-parent');
+        // Dropdown Menüsü için mobil uyumluluk
+        const dropdowns = document.querySelectorAll('.dropdown > a');
 
-        dropdownParents.forEach(parent => {
-            const link = parent.querySelector('a');
-
-            link.addEventListener('click', (e) => {
+        dropdowns.forEach(dropdown => {
+            dropdown.addEventListener('click', (e) => {
                 if (window.innerWidth <= 992) {
                     e.preventDefault();
+                    const parent = dropdown.parentElement;
                     parent.classList.toggle('active');
 
-                    // Close other dropdowns
-                    dropdownParents.forEach(otherParent => {
-                        if (otherParent !== parent) {
-                            otherParent.classList.remove('active');
+                    // Diğer açık dropdown'ları kapat
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            const otherParent = otherDropdown.parentElement;
+                            if (otherParent.classList.contains('active')) {
+                                otherParent.classList.remove('active');
+                            }
                         }
                     });
                 }
             });
         });
 
-        // Close menu when clicking outside on mobile
+        // Sayfa dışına tıklanınca mobil menüyü kapat
         document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 992 && !e.target.closest('nav') && !e.target.closest('.hamburger')) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('active');
+            if (!navMenu.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+                hamburgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
 
-                // Close all dropdowns
-                dropdownParents.forEach(parent => {
-                    parent.classList.remove('active');
+                // Açık dropdown'ları kapat
+                document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+                    dropdown.classList.remove('active');
                 });
             }
         });
 
-        // Header scroll effect
+        // Header scroll efekti
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('.main-header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(15, 26, 44, 0.98)';
-                header.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.2)';
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
             } else {
-                header.style.background = 'rgba(15, 26, 44, 0.95)';
-                header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                header.classList.remove('scrolled');
             }
         });
 
-        // Floating elements animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((element, index) => {
-                element.style.animationDelay = `${index * 2}s`;
+        // Slider Functionality
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Slider'ı başlat
+        function initSlider() {
+            sliderItems[0].classList.add('active');
+            sliderDots[0].classList.add('active');
+            startSlideInterval();
+        }
+
+        // Slayt değiştirme fonksiyonu
+        function changeSlide(slideIndex) {
+            sliderItems[currentSlide].classList.remove('active');
+            sliderDots[currentSlide].classList.remove('active');
+
+            currentSlide = slideIndex;
+            sliderItems[currentSlide].classList.add('active');
+            sliderDots[currentSlide].classList.add('active');
+        }
+
+        // Sonraki slayta geç
+        function nextSlide() {
+            let nextSlideIndex = (currentSlide + 1) % sliderItems.length;
+            changeSlide(nextSlideIndex);
+        }
+
+        // Önceki slayta geç
+        function prevSlide() {
+            let prevSlideIndex = (currentSlide - 1 + sliderItems.length) % sliderItems.length;
+            changeSlide(prevSlideIndex);
+        }
+
+        // Slider noktalarına tıklama
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                resetSlideInterval();
+                changeSlide(index);
             });
         });
 
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Önceki/Sonraki butonları
+        prevBtn.addEventListener('click', () => {
+            resetSlideInterval();
+            prevSlide();
+        });
 
+        nextBtn.addEventListener('click', () => {
+            resetSlideInterval();
+            nextSlide();
+        });
+
+        // Otomatik geçişi başlat
+        function startSlideInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Otomatik geçişi sıfırla
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+
+        // Property Tabs Filtering
+        const propertyTabs = document.querySelectorAll('.property-tab');
+        const propertyCards = document.querySelectorAll('.property-card');
+
+        propertyTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                propertyTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const filter = tab.getAttribute('data-filter');
+
+                propertyCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-type') === filter) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Arama formu gönderimi
+        const searchForm = document.getElementById('searchForm');
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const location = document.getElementById('location').value;
+            const type = document.getElementById('type').value;
+            const transaction = document.getElementById('transaction').value;
+            const price = document.getElementById('price').value;
+
+            alert(`Arama yapılıyor:\nLokasyon: ${location || 'Tümü'}\nMülk Tipi: ${type || 'Tümü'}\nİşlem Türü: ${transaction}\nFiyat Aralığı: ${price || 'Tümü'}`);
+        });
+
+        // İstatistik sayıları animasyonu
+        function animateStats() {
+            const stat1 = document.getElementById('stat1');
+            const stat2 = document.getElementById('stat2');
+            const stat3 = document.getElementById('stat3');
+            const stat4 = document.getElementById('stat4');
+
+            stat1.textContent = '0';
+            stat2.textContent = '0';
+            stat3.textContent = '0';
+            stat4.textContent = '0';
+
+            const targetStats = [1250, 340, 2890, 28];
+            const stats = [stat1, stat2, stat3, stat4];
+
+            const duration = 2000;
+            const steps = 60;
+            const stepDuration = duration / steps;
+
+            stats.forEach((stat, index) => {
+                let current = 0;
+                const target = targetStats[index];
+                const increment = target / steps;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current).toLocaleString();
+                }, stepDuration);
+            });
+        }
+
+        // İstatistik bölümü göründüğünde animasyonu başlat
+        const statsSection = document.querySelector('.stats-section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    animateStats();
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.5 });
 
-        // Observe elements for animation
-        document.querySelectorAll('.property-card, .service-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        observer.observe(statsSection);
+
+        // Scroll animasyonları
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeElements.forEach(element => {
+            fadeObserver.observe(element);
+        });
+
+        // Menü animasyonu
+        const navItems = document.querySelectorAll('.nav-menu ul li');
+        navItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Kartlara hover efekti ekle
+        propertyCards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transition = 'all 0.3s ease';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+
+        // Sayfa yüklendiğinde slider'ı başlat
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlider();
+
+            // Kartları başlangıçta göster
+            propertyCards.forEach(card => {
+                card.style.display = 'flex';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            });
         });
     </script>
 </body>
